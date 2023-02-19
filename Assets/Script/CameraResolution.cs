@@ -12,7 +12,7 @@ public class CameraResolution : MonoBehaviour
         Rect rt = cam.rect;
 
         // 현재 세로 모드 9:16, 반대로 하고 싶으면 16:9를 입력.
-        float scale_height = ((float)Screen.width / Screen.height) / ((float)9 / 16); // (가로 / 세로)
+        float scale_height = ((float)Screen.width / Screen.height) / ((float)16 / 9); // (가로 / 세로)
         float scale_width = 1f / scale_height;
 
         if (scale_height < 1)
