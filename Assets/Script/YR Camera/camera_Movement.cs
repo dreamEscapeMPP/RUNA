@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//빈객체에 넣고, 검정 페이드인아웃될 UI추가
 namespace Cam_Object
 {
     public class camera_Movement : MonoBehaviour
