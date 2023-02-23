@@ -27,14 +27,14 @@ public class Test : MonoBehaviour
     {
         narration.UI_set(ui);
         narration.Right_Image_set(right_img);
-        narration.Left_Image_set(left_img); // 이미지 리소스 지정
-        narration.All_Off(); // 처음에 Off 상태로 만들어주기
+        narration.Left_Image_set(left_img); // ????? ????? ????
+        narration.All_Off(); // ????? Off ???·? ????????
         narration.UI_On();
-        yield return StartCoroutine(narration.Chat("안녕하세요", 2));
+        yield return StartCoroutine(narration.Chat("????????", 2));
         narration.Right_Image_On();
-        yield return StartCoroutine(narration.Chat("누구세요?", 2));
+        yield return StartCoroutine(narration.Chat("?????????", 2));
         narration.Right_Image_Off();
         narration.Left_Image_On();
-        yield return StartCoroutine(narration.Chat("넌데요?", 2));
+        yield return StartCoroutine(narration.Chat("??????", 2));
     }
 }

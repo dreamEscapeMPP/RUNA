@@ -9,12 +9,12 @@ namespace Cam_Object
     public class camera_Movement : MonoBehaviour
     {
         public Image Black_Image; //검정 이미지
-        CameraTrans camera;
+        CameraTrans camera_;
 
         void Start()
         {
-            camera = new CameraTrans();
-            camera.SetCamera();  //메인카메라 셋팅(기본으로 돌아갈 카메라)
+            camera_ = new CameraTrans();
+            camera_.SetCamera();  //메인카메라 셋팅(기본으로 돌아갈 카메라)
         }
 
 
@@ -22,7 +22,7 @@ namespace Cam_Object
         public void Call_FadeInOut()
         {
             //Fadeinout실행
-            StartCoroutine(camera.FadeCorutine(Black_Image));
+            StartCoroutine(camera_.FadeCorutine(Black_Image));
         }
     }
 }

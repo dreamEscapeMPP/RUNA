@@ -9,6 +9,7 @@ namespace Cam_Object
     {
         private void OnMouseDown()
         {
+            Debug.Log(0);
             GameObject.Find("GameManager_CamMove").GetComponent<camera_Movement>().Call_FadeInOut();
             if (gameObject.CompareTag("backScene"))
                 Change_Camera_backView();
@@ -17,12 +18,12 @@ namespace Cam_Object
         }
         public void Change_Camera_objView()
         {
-            Cam_Object.CameraTrans camera = new Cam_Object.CameraTrans();
+            CameraTrans camera = new CameraTrans();
             camera.ZoomIn_Object(gameObject.name);
         }
         public void Change_Camera_backView()
         {
-            Cam_Object.CameraTrans camera = new Cam_Object.CameraTrans();
+            CameraTrans camera = new CameraTrans();
             camera.SetCamera();
         }
     }

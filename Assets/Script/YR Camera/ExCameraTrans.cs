@@ -7,7 +7,7 @@ using Cam_Object;
 public class ExCameraTrans : MonoBehaviour
 {
     public Image Black_Image; //검정 이미지
-    CameraTrans camera;
+    CameraTrans camera_;
 
     //예시
     public Camera camera1;
@@ -15,7 +15,7 @@ public class ExCameraTrans : MonoBehaviour
 
     void Start()
     {
-        camera = new CameraTrans();
+        camera_ = new CameraTrans();
 
         // Disable camera 2 by default
         camera2.enabled = false;
@@ -35,6 +35,6 @@ public class ExCameraTrans : MonoBehaviour
     public void Call_FadeInOut()
     {
         //Fadeinout실행
-        StartCoroutine(camera.FadeCorutine(Black_Image));
+        StartCoroutine(camera_.FadeCorutine(Black_Image));
     }
 }
