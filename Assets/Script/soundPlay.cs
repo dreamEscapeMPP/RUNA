@@ -7,13 +7,18 @@ using UnityEngine;
 
 public class soundPlay : MonoBehaviour
 {
+    public float waitSecObj = 2;
+    public bool deleteCheck = false;
     private void OnMouseDown()
     {
-        Play_SoundSource();
-        StartCoroutine(Delete_Object());
+
+        if (deleteCheck)
+            StartCoroutine(Delete_Object());
+        else
+            Play_SoundSource();
     }
 
-    public void Play_SoundSource()
+    private void Play_SoundSource()
     {
         gameObject.GetComponent<AudioSource>().Play();
     }
@@ -26,7 +31,9 @@ public class soundPlay : MonoBehaviour
     //소리 들리고 객체 없애기 위해..
     public IEnumerator Delete_Object()
     {
-        yield return new WaitForSeconds(0.5f);
-        gameObject.SetActive(false);
+        Play_SoundSource();
+        gameObject.GetComponent<SpriteRenderer>().sprite = null;
+        yield return new WaitForSeconds(waitSecObj);
     }
 }
+

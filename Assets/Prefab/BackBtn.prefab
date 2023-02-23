@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5036515271316609209}
   - component: {fileID: 4689460529668577960}
   m_Layer: 0
-  m_Name: parts2_3 (1)
+  m_Name: BackBtn
   m_TagString: backScene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

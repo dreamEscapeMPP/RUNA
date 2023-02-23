@@ -9,7 +9,6 @@ namespace Cam_Object
     {
         private void OnMouseDown()
         {
-            Debug.Log(0);
             GameObject.Find("GameManager_CamMove").GetComponent<camera_Movement>().Call_FadeInOut();
             if (gameObject.CompareTag("backScene"))
                 Change_Camera_backView();

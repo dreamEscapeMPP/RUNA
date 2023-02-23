@@ -3,45 +3,48 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using Stroy;
+using WhileStroy;
 
 public class FitstStory : MonoBehaviour
 {
     public GameObject backgroud_touch;
-    public GameObject player_Chat_view;
-    public Text ui;
+    public GameObject ui;
     public Image right_img;
-    Narration narration;
+    public Narration narration;
+    ShowUINarration showUINarration;
     // Start is called before the first frame update
     void Start()
     {
+        showUINarration = new ShowUINarration();
         narration = new Narration();//gameObject.AddComponent<Narration>();
         StartCoroutine(Play());
 
     }
 
+
     IEnumerator Play()
     {
+        yield return new WaitForSeconds(1f);
         narration.UI_set(ui);
         narration.Right_Image_set(right_img);
-
-
-        yield return StartCoroutine(narration.Chat("æÓ∂Û ø©±‚∞° æÓµ¡ˆ", 2));
+        StartCoroutine(TypingSound());
+        yield return StartCoroutine(narration.Chat("Ïñ¥Îùº Ïó¨Í∏∞Í∞Ä Ïñ¥ÎîîÏßÄ", 1));
         narration.Right_Image_Off();
 
-        OffCollider();
-    }
+        showUINarration.OffCollider();
 
-    //√ﬂ∞° ∑Œ æ»∫∏¿Ã∞‘«‘
-    public void OffCollider()
-    {
-        player_Chat_view.SetActive(false);
         backgroud_touch.GetComponent<TouchOnOff>().OnEnableColider2D();
     }
-    public void OnCollider()
+
+    IEnumerator TypingSound()
     {
-        player_Chat_view.SetActive(true);
-        backgroud_touch.GetComponent<TouchOnOff>().OffEnableColider2D();
+
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(0.5f);
+        gameObject.GetComponent<AudioSource>().Pause();
     }
+
+
 
 
 }
