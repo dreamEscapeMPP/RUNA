@@ -9,29 +9,32 @@ namespace Stroy
     {
         private string writwer_Text; // 출력해주고 싶은 대사
         private Text ChatText_UI; // 대화창 UI
+        private GameObject ChatText_bar; // 대화창 UI
         private Image Right_Image; // 오른쪽 캐릭터 이미지
         private Image Left_Image; // 왼쪽 캐릭터 이미지
 
         public void All_Off()
         {
-            ChatText_UI.enabled = false;
+            ChatText_bar.SetActive(false);
+            //ChatText_UI.enabled = false;
             Right_Image.enabled = false;
             Left_Image.enabled = false;
         }
 
-        public void UI_set(Text UI) // UI 대화창 설정
+        public void UI_set(GameObject chattext_bar) // UI 대화창 설정
         {
-            ChatText_UI = UI;
+            ChatText_bar = chattext_bar;
+            ChatText_UI = ChatText_bar.transform.GetChild(0).GetComponent<Text>();
         }
 
         public void UI_On() // UI 대화창 Off
         {
-            ChatText_UI.enabled = true;
+            ChatText_bar.SetActive(true);
         }
 
         public void UI_Off() // UI 대화창 On
         {
-            ChatText_UI.enabled = false;
+            ChatText_bar.SetActive(false);
         }
 
         public void Right_Image_set(Image right_img) // 오른쪽 캐릭터 이미지 설정
