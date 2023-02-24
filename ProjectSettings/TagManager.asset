@@ -6,6 +6,9 @@ TagManager:
   tags:
   - backScene
   - Key
+  - Item
+  - ItemBox
+  - Items
   layers:
   - Default
   - TransparentFX

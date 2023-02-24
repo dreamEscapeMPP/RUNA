@@ -8,7 +8,7 @@ public class FitstStory : MonoBehaviour
 {
     public GameObject backgroud_touch;
     public GameObject player_Chat_view;
-    public Text ui;
+    public GameObject ui;
     public Image right_img;
     Narration narration;
     // Start is called before the first frame update

@@ -23,6 +23,7 @@ public class SecondRoomStory : MonoBehaviour
     {
         
     }
+
     IEnumerator Play()
     {
         narration.UI_set(text_bar);
