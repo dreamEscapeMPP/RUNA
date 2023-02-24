@@ -22,7 +22,7 @@ public class SecondPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
@@ -45,7 +45,7 @@ public class SecondPlayer : MonoBehaviour
             GameObject.Find("parts1_leftbook_9_answer").GetComponent<SpriteRenderer>().enabled == true &&
             GameObject.Find("parts2_Rbook_0_answer").GetComponent<SpriteRenderer>().enabled == true)
             {
-                if(real_rabbit_check == 0)
+                if (real_rabbit_check == 0)
                 {
                     real_rabbit.SetActive(true);
                     real_rabbit_check = 1;
@@ -54,7 +54,7 @@ public class SecondPlayer : MonoBehaviour
 
             if (GameObject.Find("real_rabbit_answer").GetComponent<SpriteRenderer>().enabled == true)
             {
-                if(doort_check == 0)
+                if (doort_check == 0)
                 {
                     real_rabbit_small.SetActive(true);
                     GameObject.Find("door").GetComponent<ClearNNext>().Change_nextScene();

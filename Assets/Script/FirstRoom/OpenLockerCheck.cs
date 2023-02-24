@@ -5,6 +5,8 @@ using NextScene;
 public class OpenLockerCheck : MonoBehaviour
 {
     public GameObject door;  //문 콜라이더가 담긴 객체
+    public bool imageCh = true;
+    public GameObject ChangeViewImage;
     public Sprite ClearViewImage;  //ex금고, 열린 이미지
     //1.061431f ,-23.94382f
     public Vector3 ImagePosition_changed = new Vector3(0, 0, -0.01f);  //조정했으면 하는 위치로
@@ -13,9 +15,18 @@ public class OpenLockerCheck : MonoBehaviour
     public void setViewClear()
     {
         gameObject.GetComponent<AudioSource>().Play();
-        gameObject.GetComponent<SpriteRenderer>().sprite = ClearViewImage;
-        gameObject.transform.position = ImagePosition_changed;
-        StartCoroutine(gameObject.transform.parent.GetComponent<lockerClear>().Set_Active_obj_locker_ver());
-        door.GetComponent<ClearNNext>().Change_backgournd_Sprite();
+
+        if (imageCh)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = ClearViewImage;
+            gameObject.transform.position = ImagePosition_changed;
+            StartCoroutine(gameObject.transform.parent.GetComponent<lockerClear>().Set_Active_obj_locker_ver());
+            door.GetComponent<ClearNNext>().Change_backgournd_Sprite();
+        }
+        else
+        {
+            ChangeViewImage.SetActive(true);
+            gameObject.SetActive(false);
+        }
     }
 }

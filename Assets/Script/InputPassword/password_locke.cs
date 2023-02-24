@@ -8,7 +8,7 @@ public class password_locke : MonoBehaviour
 {
 
     public GameObject passwordObj;      //열릴 이미지를 바꿀 오브젝트 넣기
-    private List<int> password = new List<int>() { 1, 2, 2, 7 };
+    public List<int> password = new List<int>() { 1, 2, 2, 7 };
     private bool password_ch = false;
     private int password_Count = 0;
 

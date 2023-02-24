@@ -30,7 +30,7 @@ namespace NextScene
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
         }
 
-        private void Change_nextScene()
+        public void Change_nextScene()
         {
             SceneManager.LoadScene(Next_Scene_Name, LoadSceneMode.Single);
         }
