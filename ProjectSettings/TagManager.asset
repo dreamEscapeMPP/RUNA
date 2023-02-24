@@ -6,6 +6,7 @@ TagManager:
   tags:
   - backScene
   - Key
+  - card
   layers:
   - Default
   - TransparentFX
