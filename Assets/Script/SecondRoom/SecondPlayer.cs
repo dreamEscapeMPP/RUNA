@@ -7,7 +7,9 @@ using NextScene;
 
 public class SecondPlayer : MonoBehaviour
 {
-    Item item;
+    Item item; // 아이템할때만 필요
+
+    // 두번째 방에서만 쓰는 것들
     public GameObject real_rabbit;
     public GameObject real_rabbit_small;
     public GameObject real_rabbit_answer;
@@ -24,6 +26,7 @@ public class SecondPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 이 아래 부분 똑같이 갖다가 쓰면 됨.
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -42,6 +45,7 @@ public class SecondPlayer : MonoBehaviour
                 }
             }
 
+            // 두번째 방에서만 쓰는 것들
             if (GameObject.Find("parts2_Rbook_5_answer").GetComponent<SpriteRenderer>().enabled == true &&
             GameObject.Find("parts1_leftbook_8_answer").GetComponent<SpriteRenderer>().enabled == true &&
             GameObject.Find("parts1_leftbook_9_answer").GetComponent<SpriteRenderer>().enabled == true &&

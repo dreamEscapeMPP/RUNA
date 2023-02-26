@@ -38,7 +38,6 @@ public class FitstStory : MonoBehaviour
 
     IEnumerator TypingSound()
     {
-
         gameObject.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(0.5f);
         gameObject.GetComponent<AudioSource>().Pause();

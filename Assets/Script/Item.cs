@@ -12,7 +12,7 @@ namespace Player
     // 위 아이템에 ItemBox 태그 달고 이름이 획득한 이름 + "_answer"이어야함.
     // ex) rabbit1 <- 획득한 아이템 / rabbit1_answer <- 획득한 아이템을 놓을 위치
     // 상호작용 부르는 방법은 SecondPlayer 참고 (Input.GetMouseButtonDown(0))
-    // 해당 클래스는 player에게 붙여서 사용하는 방식임
+    // 해당 클래스는 player에게 붙여서 사용하는 방식임 / 한 scene 에 한 개만 존재
     public class Item : MonoBehaviour
     {
         public bool isGetItem = false;
