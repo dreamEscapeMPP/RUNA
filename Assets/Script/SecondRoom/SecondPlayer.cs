@@ -10,6 +10,8 @@ public class SecondPlayer : MonoBehaviour
     Item item;
     public GameObject real_rabbit;
     public GameObject real_rabbit_small;
+    public GameObject real_rabbit_answer;
+    public GameObject memo;
     private int real_rabbit_check = 0;
     private int doort_check = 0;
 
@@ -49,15 +51,17 @@ public class SecondPlayer : MonoBehaviour
                 {
                     real_rabbit.SetActive(true);
                     real_rabbit_check = 1;
+                    memo.SetActive(false);
+                    real_rabbit_answer.SetActive(true);
                 }
             }
 
-            if (GameObject.Find("real_rabbit_answer").GetComponent<SpriteRenderer>().enabled == true)
+            if (real_rabbit_check == 1 && GameObject.Find("real_rabbit_answer").GetComponent<SpriteRenderer>().enabled == true)
             {
                 if (doort_check == 0)
                 {
                     real_rabbit_small.SetActive(true);
-                    GameObject.Find("door").GetComponent<ClearNNext>().Change_nextScene();
+                    GameObject.Find("door").GetComponent<ClearNNext>().Change_backgournd_Sprite();
                     doort_check = 1;
                 }
             }
