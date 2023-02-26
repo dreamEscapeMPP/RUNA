@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Stroy;
-
+/*
 namespace WhileStroy
 {
     public class ShowUINarration : MonoBehaviour
@@ -20,25 +20,26 @@ namespace WhileStroy
         {
             StartCoroutine(ShowNarration(showNarrationdDetail));
         }
+        
+                public IEnumerator ShowNarration(string showNarrationdDetails)
+                {
+                    NarrationManage = GameObject.Find("GameManage");
 
-        public IEnumerator ShowNarration(string showNarrationdDetails)
-        {
-            NarrationManage = GameObject.Find("GameManage");
-
-            UInar = NarrationManage.GetComponent<FitstStory>().narration;
-            OnCollider();
-            UInar.UI_On();
-            if (showCharCheck)
-            {
-                UInar.Right_Image_set(ShowCharImage);
-            }
-            GameObject.Find("TextName").GetComponent<Text>().text = "system";
-            NarrationManage.GetComponent<AudioSource>().Play();
-            yield return StartCoroutine(UInar.Chat(showNarrationdDetails, 0.5f));
-            NarrationManage.GetComponent<AudioSource>().Pause();
-            UInar.UI_Off();
-            OffCollider();
-        }
+                    UInar = NarrationManage.GetComponent<FitstStory>().narration;
+                    OnCollider();
+                    UInar.UI_On();
+                    if (showCharCheck)
+                    {
+                        UInar.Right_Image_set(ShowCharImage);
+                    }
+                    GameObject.Find("TextName").GetComponent<Text>().text = "system";
+                    NarrationManage.GetComponent<AudioSource>().Play();
+                    yield return StartCoroutine(UInar.Chat(showNarrationdDetails, 0.5f));
+                    NarrationManage.GetComponent<AudioSource>().Pause();
+                    UInar.UI_Off();
+                    OffCollider();
+                }
+                
         public void OffCollider()
         {
             if (showChatUI == null)
@@ -53,4 +54,4 @@ namespace WhileStroy
         }
 
     }
-}
+}*/

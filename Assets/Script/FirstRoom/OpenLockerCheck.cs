@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NextScene;
 public class OpenLockerCheck : MonoBehaviour
 {
-    public GameObject door;  //문 콜라이더가 담긴 객체
     public bool imageCh = true;
     public GameObject ChangeViewImage;
     public Sprite ClearViewImage;  //ex금고, 열린 이미지
@@ -21,7 +19,7 @@ public class OpenLockerCheck : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sprite = ClearViewImage;
             gameObject.transform.position = ImagePosition_changed;
             StartCoroutine(gameObject.transform.parent.GetComponent<lockerClear>().Set_Active_obj_locker_ver());
-            door.GetComponent<ClearNNext>().Change_backgournd_Sprite();
+
         }
         else
         {

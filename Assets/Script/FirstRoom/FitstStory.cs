@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using Stroy;
-using WhileStroy;
+//using WhileStroy;
 
 public class FitstStory : MonoBehaviour
 {
     public GameObject backgroud_touch;
     public GameObject ui;
     public Image right_img;
-    public Narration narration;
-    ShowUINarration showUINarration;
+    //public Narration narration;
+    //ShowUINarration showUINarration;
     // Start is called before the first frame update
     void Start()
     {
-        showUINarration = new ShowUINarration();
-        narration = new Narration();//gameObject.AddComponent<Narration>();
+        //showUINarration = new ShowUINarration();
+        //narration = new Narration();//gameObject.AddComponent<Narration>();
         StartCoroutine(Play());
 
     }
@@ -25,13 +25,13 @@ public class FitstStory : MonoBehaviour
     IEnumerator Play()
     {
         yield return new WaitForSeconds(1f);
-        narration.UI_set(ui);
-        narration.Right_Image_set(right_img);
-        StartCoroutine(TypingSound());
-        yield return StartCoroutine(narration.Chat("어라 여기가 어디지", 1));
-        narration.Right_Image_Off();
+        // narration.UI_set(ui);
+        //narration.Right_Image_set(right_img);
+        //StartCoroutine(TypingSound());
+        //yield return StartCoroutine(narration.Chat("어라 여기가 어디지", 1));
+        //narration.Right_Image_Off();
 
-        showUINarration.OffCollider();
+        //showUINarration.OffCollider();
 
         backgroud_touch.GetComponent<TouchOnOff>().OnEnableColider2D();
     }
