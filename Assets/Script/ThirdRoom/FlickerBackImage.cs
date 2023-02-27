@@ -7,10 +7,12 @@ public class FlickerBackImage : MonoBehaviour
     public Sprite changeImage;
     public Sprite OrignBackImage;
     public GameObject changeObj;
+    public bool requirement = false;
 
     void OnMouseDown()
     {
-        StartCoroutine(FlickerImage());
+        if (!requirement)
+            StartCoroutine(FlickerImage());
     }
 
     public IEnumerator FlickerImage()

@@ -6,7 +6,7 @@ using UnityEngine;
 //비밀번호 입력 나타나는 곳에 넣기 설정 ㄴㄴ
 public class password_locke : MonoBehaviour
 {
-
+    public static bool ClearStage = false;
     public GameObject passwordObj;      //열릴 이미지를 바꿀 오브젝트 넣기
     public List<int> password = new List<int>() { 1, 2, 2, 7 };
     private bool password_ch = false;
@@ -45,6 +45,7 @@ public class password_locke : MonoBehaviour
         if (password[0] == inputPassword[0] && password[1] == inputPassword[1] && password[2] == inputPassword[2] && password[3] == inputPassword[3])
         {
             password_ch = true;
+            ClearStage = true;
             passwordObj.GetComponent<OpenLockerCheck>().setViewClear();
         }
         else

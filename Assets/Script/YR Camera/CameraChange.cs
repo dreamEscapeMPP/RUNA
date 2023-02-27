@@ -7,6 +7,7 @@ namespace Cam_Object
 {
     public class CameraChange : MonoBehaviour
     {
+
         private void OnMouseDown()
         {
             GameObject.Find("GameManager_CamMove").GetComponent<camera_Movement>().Call_FadeInOut();
