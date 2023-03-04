@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FourRoom.unity
     guid: 37025f9f7f10117428b36b3227f0cdf8
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: f58d63edb3277224682e40f11e8bf220
   m_configObjects: {}

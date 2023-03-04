@@ -31,6 +31,15 @@ namespace Cam_Object
             MainCam.GetComponent<Camera>().enabled = false;
             GameObject.Find(Obj_name + "_Cam").GetComponent<Camera>().enabled = true;
         }
+        public void ZoomIn_EachObject(string Obj_name)
+        {
+            SetCamera();
+
+            GameObject MainCam = GameObject.Find("Main Camera");
+
+            MainCam.GetComponent<Camera>().enabled = false;
+            GameObject.Find(Obj_name + "_Cam").GetComponent<Camera>().enabled = true;
+        }
 
         // 코루틴 이용해서 알파값 변경
         ///페이드인아웃 하는 법

@@ -13,6 +13,8 @@ namespace Cam_Object
             GameObject.Find("GameManager_CamMove").GetComponent<camera_Movement>().Call_FadeInOut();
             if (gameObject.CompareTag("backScene"))
                 Change_Camera_backView();
+            else if (gameObject.CompareTag("bookScene"))
+                Change_Camera_BookView();
             else
                 Change_Camera_objView();
         }
@@ -25,6 +27,11 @@ namespace Cam_Object
         {
             CameraTrans camera = new CameraTrans();
             camera.SetCamera();
+        }
+        public void Change_Camera_BookView()
+        {
+            CameraTrans camera = new CameraTrans();
+            camera.ZoomIn_EachObject("book");
         }
     }
 }

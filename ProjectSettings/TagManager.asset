@@ -7,6 +7,9 @@ TagManager:
   - backScene
   - Key
   - card
+  - ItemBox
+  - Item
+  - bookScene
   layers:
   - Default
   - TransparentFX
