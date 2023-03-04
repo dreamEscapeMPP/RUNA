@@ -10,7 +10,7 @@ public class fourRoomClear : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        password_locke.ClearStage = false;
     }
 
     // Update is called once per frame
