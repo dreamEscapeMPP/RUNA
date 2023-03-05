@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 69111125}
   - component: {fileID: 69111124}
   - component: {fileID: 69111127}
-  - component: {fileID: 69111128}
   m_Layer: 0
   m_Name: art
   m_TagString: Untagged
@@ -246,20 +245,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &69111128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69111123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  narration: "\uB514\uC800\uD2B8\uAC00 \uADF8\uB824\uC9C4 \uC561\uC790\uAC00 \uAC78\uB824\uC788\uB2E4."
-  isCharaterNarration: 0
 --- !u!1 &95371760
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +501,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &132559694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132559695}
+  - component: {fileID: 132559697}
+  - component: {fileID: 132559696}
+  m_Layer: 0
+  m_Name: ClickUIChat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &132559695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132559694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1186078013}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &132559696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132559694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroud_touch: {fileID: 1186078011}
+  narration: "\uB514\uC800\uD2B8\uAC00 \uADF8\uB824\uC9C4 \uC561\uC790\uAC00 \uAC78\uB824\uC788\uB2E4."
+  isCharaterNarration: 0
+  OnceNarrationTime: 0
+--- !u!61 &132559697
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132559694}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.71, y: 10.12}
+  m_EdgeRadius: 0
 --- !u!1 &139731301
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +587,6 @@ GameObject:
   - component: {fileID: 139731304}
   - component: {fileID: 139731303}
   - component: {fileID: 139731302}
-  - component: {fileID: 139731306}
   m_Layer: 0
   m_Name: teahouse
   m_TagString: Untagged
@@ -639,20 +697,6 @@ Transform:
   m_Father: {fileID: 255942215}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &139731306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139731301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  narration: "\uCC3B\uC794 \uC5EC\uB7EC \uAC1C\uAC00 \uC7A5 \uC548\uC5D0 \uB193\uC5EC\uC788\uB2E4."
-  isCharaterNarration: 0
 --- !u!1 &166584304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,6 +1418,7 @@ GameObject:
   - component: {fileID: 316804558}
   - component: {fileID: 316804559}
   - component: {fileID: 316804560}
+  - component: {fileID: 316804561}
   m_Layer: 0
   m_Name: firstRoomKey
   m_TagString: Key
@@ -1607,6 +1652,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1159854133}
+--- !u!114 &316804561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316804553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroud_touch: {fileID: 166584304}
+  narration: "\uC5B4\uB518\uAC00\uC758 \uBB38\uC774 \uC5F4\uB9B0\uAC83\uAC19\uB2E4."
+  isCharaterNarration: 0
+  OnceNarrationTime: 0
 --- !u!1 &407380752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,6 +1760,8 @@ GameObject:
   m_Component:
   - component: {fileID: 413625480}
   - component: {fileID: 413625481}
+  - component: {fileID: 413625483}
+  - component: {fileID: 413625482}
   m_Layer: 0
   m_Name: dessert_view
   m_TagString: Untagged
@@ -1775,6 +1838,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &413625482
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413625479}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.2, y: 10.8}
+  m_EdgeRadius: 0
+--- !u!114 &413625483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413625479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroud_touch: {fileID: 413625479}
+  narration: "\uB9DB\uC788\uC5B4 \uBCF4\uC774\uB294 \uB514\uC800\uD2B8\uC640 \uD1A0\uB07C
+    \uC778\uD615\uC774 \uB193\uC5EC\uC788\uB2E4."
+  isCharaterNarration: 0
+  OnceNarrationTime: 1
 --- !u!1 &447076069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,6 +1893,7 @@ GameObject:
   - component: {fileID: 447076071}
   - component: {fileID: 447076073}
   - component: {fileID: 447076072}
+  - component: {fileID: 447076074}
   m_Layer: 0
   m_Name: parts1_11
   m_TagString: Untagged
@@ -1898,6 +2005,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.33, y: 4.61}
   m_EdgeRadius: 0
+--- !u!114 &447076074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447076069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroud_touch: {fileID: 413625479}
+  narration: "\uC5B4\uB77C? \uD1A0\uB07C \uC544\uB798\uC5D0 \uBB50\uAC00 \uC788\uC5B4...
+    \uC800\uAC74 \uBB50\uC9C0?"
+  isCharaterNarration: 1
+  OnceNarrationTime: 0
 --- !u!1 &511880772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,6 +2158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f88e1b9bdbf6ad0419e64c6faf7a229f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroud_touch: {fileID: 255942213}
 --- !u!4 &585273989
 Transform:
   m_ObjectHideFlags: 0
@@ -3997,6 +4122,7 @@ Transform:
   m_LocalScale: {x: 0.9265983, y: 0.9265983, z: 1}
   m_Children:
   - {fileID: 1259186386}
+  - {fileID: 132559695}
   m_Father: {fileID: 1147253266}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4572,6 +4698,7 @@ Transform:
   m_LocalScale: {x: 0.9265983, y: 0.9265983, z: 1}
   m_Children:
   - {fileID: 1017516789}
+  - {fileID: 1879940028}
   m_Father: {fileID: 1147253266}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5688,6 +5815,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1879940027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1879940028}
+  - component: {fileID: 1879940030}
+  - component: {fileID: 1879940029}
+  m_Layer: 0
+  m_Name: ClickUIChat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1879940028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879940027}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1220514002}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1879940029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879940027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroud_touch: {fileID: 1220514000}
+  narration: "\uCC3B\uC794 \uC5EC\uB7EC \uAC1C\uAC00 \uC7A5 \uC548\uC5D0 \uB193\uC5EC\uC788\uB2E4."
+  isCharaterNarration: 0
+  OnceNarrationTime: 0
+--- !u!61 &1879940030
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879940027}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.19, y: 10.83}
+  m_EdgeRadius: 0
 --- !u!1 &1897897471
 GameObject:
   m_ObjectHideFlags: 0
@@ -6533,7 +6734,6 @@ GameObject:
   - component: {fileID: 2075318500}
   - component: {fileID: 2075318499}
   - component: {fileID: 2075318498}
-  - component: {fileID: 2075318501}
   m_Layer: 0
   m_Name: dessert
   m_TagString: Untagged
@@ -6644,21 +6844,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2075318501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075318496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  narration: "\uB9DB\uC788\uC5B4 \uBCF4\uC774\uB294 \uB514\uC800\uD2B8\uC640 \uD1A0\uB07C
-    \uC778\uD615\uC774 \uB193\uC5EC\uC788\uB2E4."
-  isCharaterNarration: 0
 --- !u!4 &8010877560049205442
 Transform:
   m_ObjectHideFlags: 0

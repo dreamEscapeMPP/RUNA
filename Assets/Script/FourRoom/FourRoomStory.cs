@@ -5,6 +5,7 @@ using Stroy;
 
 public class FourRoomStory : MonoBehaviour
 {
+    public GameObject backgroud_touch;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class FourRoomStory : MonoBehaviour
         yield return StartCoroutine(Narration.instance.Charater_Chat("여기는 내 방인데.....", 2));
         yield return StartCoroutine(Narration.instance.Charater_Chat("엄마.... 아빠.....", 2));
         yield return StartCoroutine(Narration.instance.Charater_Chat("무서워 무서워 무서워 무서워", 2));
-        yield return StartCoroutine(Narration.instance.Chat("방을 둘려보자.", 2));
+        yield return StartCoroutine(Narration.instance.Chat("방을 둘러보자.", 2));
+        backgroud_touch.GetComponent<TouchOnOff>().OnEnableColider2D();
     }
 }

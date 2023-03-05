@@ -33,7 +33,7 @@ public class FitstStory : MonoBehaviour
 
         //showUINarration.OffCollider();
 
-        backgroud_touch.GetComponent<TouchOnOff>().OnEnableColider2D();
+
     }
 
     IEnumerator TypingSound()

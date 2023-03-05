@@ -1236,7 +1236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441507808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.767469, y: 3.966385, z: -1}
+  m_LocalPosition: {x: -7.767469, y: 3.966385, z: -2.1}
   m_LocalScale: {x: 1.0792164, y: 1.0792164, z: 1}
   m_Children: []
   m_Father: {fileID: 1914292988}
@@ -1670,6 +1670,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myAlphabet: {fileID: 480350141}
   IsUpButton: 0
+--- !u!1 &489383013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 489383014}
+  - component: {fileID: 489383016}
+  - component: {fileID: 489383015}
+  m_Layer: 0
+  m_Name: ClickChatUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &489383014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489383013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1701684834}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &489383015
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489383013}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.16, y: 12.62}
+  m_EdgeRadius: 0
+--- !u!114 &489383016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489383013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroud_DontTouch: {fileID: 1701684833}
+  narration: "\uC5B4\uB9B4 \uB54C\uBD80\uD130 \uC9C0\uAE08\uAE4C\uC9C0\uC758 \uC0AC\uC9C4\uC774
+    \uBCF4\uC778\uB2E4."
+  isCharaterNarration: 1
+  OnceNarrationTime: 0
 --- !u!1 &556494067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,6 +2834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f77e514748ed945b0a492e64973dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroud_touch: {fileID: 607571597}
   alphabet:
   - {fileID: 480350141}
   - {fileID: 1702282392}
@@ -2886,7 +2962,6 @@ GameObject:
   - component: {fileID: 1300363850}
   - component: {fileID: 1300363851}
   - component: {fileID: 1300363852}
-  - component: {fileID: 1300363853}
   m_Layer: 0
   m_Name: photo
   m_TagString: Untagged
@@ -2946,21 +3021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156666529751d0b4b9bf5529e6ddd4ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1300363853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300363849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  narration: "\uC5B4\uB9B4 \uB54C\uBD80\uD130 \uC9C0\uAE08\uAE4C\uC9C0\uC758 \uC0AC\uC9C4\uC774
-    \uBCF4\uC778\uB2E4."
-  isCharaterNarration: 0
 --- !u!1 &1371790395
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,8 +4033,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroud_DontTouch: {fileID: 556494067}
   narration: "\uB9CE\uC740 \uCC45\uC774 \uAF42\uD600\uC788\uB2E4."
   isCharaterNarration: 0
+  OnceNarrationTime: 0
 --- !u!1 &1656132317
 GameObject:
   m_ObjectHideFlags: 0
@@ -4381,6 +4443,7 @@ Transform:
   m_LocalScale: {x: 0.9266, y: 0.9266, z: 1}
   m_Children:
   - {fileID: 875150172}
+  - {fileID: 489383014}
   m_Father: {fileID: 2147343181}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
