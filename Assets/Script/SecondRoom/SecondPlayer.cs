@@ -11,7 +11,6 @@ public class SecondPlayer : MonoBehaviour
 
     // 두번째 방에서만 쓰는 것들
     public GameObject real_rabbit;
-    public GameObject real_rabbit_small;
     public GameObject real_rabbit_answer;
     public GameObject memo;
     private int real_rabbit_check = 0;
@@ -64,7 +63,6 @@ public class SecondPlayer : MonoBehaviour
             {
                 if (doort_check == 0)
                 {
-                    real_rabbit_small.SetActive(true);
                     GameObject.Find("door").GetComponent<ClearNNext>().Change_backgournd_Sprite();
                     doort_check = 1;
                 }

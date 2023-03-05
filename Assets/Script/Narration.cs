@@ -15,8 +15,11 @@ namespace Stroy
         private GameObject panel;
         //private Image Left_Image; // 왼쪽 캐릭터 이미지
 
-        void Start()
+        public static Narration instance;
+
+        private void Awake()
         {
+            instance = this;
             panel = GameObject.Find("Panel");
             ChatText_Name_UI = GameObject.Find("Name_Text").GetComponent<Text>();
             ChatText_UI = GameObject.Find("Text").GetComponent<Text>();
