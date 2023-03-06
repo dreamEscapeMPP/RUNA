@@ -9,6 +9,7 @@ public class ThirdRoomStory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("saveStage", 3);
         StartCoroutine(Play());
     }
 

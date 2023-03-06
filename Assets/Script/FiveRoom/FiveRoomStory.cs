@@ -13,6 +13,7 @@ public class FiveRoomStory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("saveStage", 5);
         StartCoroutine(Play());
     }
 
