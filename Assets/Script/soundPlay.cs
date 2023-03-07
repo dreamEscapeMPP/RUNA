@@ -18,7 +18,7 @@ public class soundPlay : MonoBehaviour
             Play_SoundSource();
     }
 
-    private void Play_SoundSource()
+    public void Play_SoundSource()
     {
         gameObject.GetComponent<AudioSource>().Play();
     }

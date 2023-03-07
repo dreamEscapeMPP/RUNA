@@ -41,6 +41,7 @@ public class FiveRoomStory : MonoBehaviour
             alphabet[3].GetComponent<AlphabetChange>().alphabet_num == 1)
         {
             StartCoroutine(WaitSec());
+            FiveRoomClearADD.ClearStage = true;
             //GameObject.Find("door_open").GetComponent<BoxCollider2D>().enabled = true;
             //GameObject.Find("door_open").GetComponent<ClearNNext>().Change_backgournd_Sprite();
         }
