@@ -210,7 +210,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -269,8 +269,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -42, y: 40}
-  m_SizeDelta: {x: 65.0898, y: 65.0898}
+  m_AnchoredPosition: {x: -65.349, y: 61.975}
+  m_SizeDelta: {x: 111.787, y: 109.041}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7033144776364918451
 CanvasRenderer:
@@ -476,8 +476,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -42, y: 40}
-  m_SizeDelta: {x: 35.3877, y: 47.4537}
+  m_AnchoredPosition: {x: -65.349, y: 61.975}
+  m_SizeDelta: {x: 60.776, y: 79.496}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7033144777389567953
 CanvasRenderer:
