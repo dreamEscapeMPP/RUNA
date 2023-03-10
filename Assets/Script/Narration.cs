@@ -103,6 +103,26 @@ namespace Stroy
             panel.SetActive(false);
         }
 
+        public IEnumerator EndingChat(string narrator, float finish_stop_time) // 엔딩 나레이션 설정
+        {
+            panel.SetActive(false);
+            UI_On();
+            ChatText_bar.GetComponent<AudioSource>().Play();
+            int a = 0;
+            ChatText_Name_UI.text = "Name";
+            writwer_Text = "";
+            for (a = 0; a < narrator.Length; a++)
+            {
+                writwer_Text += narrator[a];
+                ChatText_UI.text = writwer_Text;
+                yield return new WaitForSeconds(0.05f);
+            }
+            //ChatText.text = narrator;
+            yield return new WaitForSeconds(finish_stop_time);
+            ChatText_bar.GetComponent<AudioSource>().Stop();
+            UI_Off();
+        }
+
         public IEnumerator Charater_Chat(string narrator, float finish_stop_time) // 캐릭터 대사 출력해주는 기능
         {
             panel.SetActive(true);
