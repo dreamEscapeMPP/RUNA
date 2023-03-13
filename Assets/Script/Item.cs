@@ -22,6 +22,13 @@ namespace Player
         private GameObject Item_true_bgm;
         private GameObject Item_false_bgm;
 
+        public static Item instance;
+
+        private void Awake()
+        {
+            instance = this;
+        }
+
         void Start()
         {
             ItemBox_UI_img = GameObject.Find("ItemBox_UI_img");

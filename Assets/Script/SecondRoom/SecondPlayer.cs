@@ -31,7 +31,7 @@ public class SecondPlayer : MonoBehaviour
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero, 0f);
 
-            if (hit.collider != null)
+            /*if (hit.collider != null)
             {
                 GameObject click_obj = hit.transform.gameObject;
                 if (item.isGetItem == false)
@@ -42,7 +42,7 @@ public class SecondPlayer : MonoBehaviour
                 {
                     item.Push_Item(click_obj);
                 }
-            }
+            }*/
 
             // 두번째 방에서만 쓰는 것들
             if (GameObject.Find("parts2_Rbook_5_answer").GetComponent<SpriteRenderer>().enabled == true &&

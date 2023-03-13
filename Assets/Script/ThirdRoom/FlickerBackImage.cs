@@ -8,6 +8,7 @@ public class FlickerBackImage : MonoBehaviour
     public Sprite OrignBackImage;
     public GameObject changeObj;
     public bool requirement = false;
+    public bool isTurnBGM = false;
 
     void OnMouseDown()
     {
@@ -17,6 +18,7 @@ public class FlickerBackImage : MonoBehaviour
 
     public IEnumerator FlickerImage()
     {
+        if(isTurnBGM) this.gameObject.GetComponent<AudioSource>().Play();
         changeObj.GetComponent<SpriteRenderer>().sprite = changeImage;
         yield return new WaitForSeconds(0.3f);
         changeObj.GetComponent<SpriteRenderer>().sprite = OrignBackImage;

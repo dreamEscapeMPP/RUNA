@@ -28,6 +28,8 @@ public class TouchOnOff : MonoBehaviour
             if (transform.GetChild(i).name != "door_open")
                 if (transform.GetChild(i).gameObject.GetComponent<BoxCollider2D>() != null)
                     transform.GetChild(i).gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            if(transform.GetChild(i).name == "door")
+                transform.GetChild(i).gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 

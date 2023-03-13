@@ -24,7 +24,7 @@ public class FourRoomStory : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         yield return StartCoroutine(Narration.instance.Charater_Chat("여기는 내 방인데.....", 2));
         yield return StartCoroutine(Narration.instance.Charater_Chat("엄마.... 아빠.....", 2));
-        yield return StartCoroutine(Narration.instance.Charater_Chat("무서워 무서워 무서워 무서워", 2));
+        yield return StartCoroutine(Narration.instance.Charater_Chat("무서워.....", 2));
         yield return StartCoroutine(Narration.instance.Chat("방을 둘러보자.", 2));
         backgroud_touch.GetComponent<TouchOnOff>().OnEnableColider2D();
     }
