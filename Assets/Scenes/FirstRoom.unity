@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroud_DontTouch: {fileID: 0}
+  backgroud_DontTouch: {fileID: 413625479}
   narration: "\uC5B4\uB77C? \uD1A0\uB07C \uC544\uB798\uC5D0 \uBB50\uAC00 \uC788\uC5B4...
     \uC800\uAC74 \uBB50\uC9C0?"
   isCharaterNarration: 1

@@ -1425,7 +1425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passwordObj: {fileID: 1376820126}
-  password: 05000000010000000100000000000000
+  password: 03000000010000000100000000000000
 --- !u!1 &820931480
 GameObject:
   m_ObjectHideFlags: 0
