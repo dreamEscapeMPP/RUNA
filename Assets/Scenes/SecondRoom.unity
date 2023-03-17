@@ -10283,7 +10283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backgroud_DontTouch: {fileID: 1700545500}
-  narration: "\uC758\uC790\uC704\uC5D0 \uBB34\uC5B8\uAC00 \uC62C\uB824\uC838\uC788\uB2E4."
+  narration: "\uC758\uC790 \uC704\uC5D0 \uBB34\uC5B8\uAC00 \uC62C\uB824\uC838\uC788\uB2E4."
   isCharaterNarration: 0
   OnceNarrationTime: 0
 --- !u!1 &1799422747

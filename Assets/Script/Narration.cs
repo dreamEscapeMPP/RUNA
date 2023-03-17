@@ -109,7 +109,7 @@ namespace Stroy
             UI_On();
             ChatText_bar.GetComponent<AudioSource>().Play();
             int a = 0;
-            ChatText_Name_UI.text = "Name";
+            ChatText_Name_UI.text = "Stella";
             writwer_Text = "";
             for (a = 0; a < narrator.Length; a++)
             {
@@ -131,7 +131,7 @@ namespace Stroy
             ChatText_bar.GetComponent<AudioSource>().Play();
             int a = 0;
             writwer_Text = "";
-            ChatText_Name_UI.text = "Name";
+            ChatText_Name_UI.text = "Stella";
             for (a = 0; a < narrator.Length; a++)
             {
                 writwer_Text += narrator[a];
