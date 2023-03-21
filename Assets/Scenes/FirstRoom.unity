@@ -1955,7 +1955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d9ab13e7c6e3845be119f5d4645ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroud_DontTouch: {fileID: 0}
+  backgroud_DontTouch: {fileID: 413625479}
   narration: "\uB9DB\uC788\uC5B4 \uBCF4\uC774\uB294 \uB514\uC800\uD2B8\uC640 \uD1A0\uB07C
     \uC778\uD615\uC774 \uB193\uC5EC\uC788\uB2E4."
   isCharaterNarration: 0
@@ -6049,7 +6049,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
