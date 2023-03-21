@@ -6311,7 +6311,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.81}
+  m_Offset: {x: -0.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6322,7 +6322,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.2, y: 10.8}
+  m_Size: {x: 12.68, y: 9.2}
   m_EdgeRadius: 0
 --- !u!114 &1354567488
 MonoBehaviour:
@@ -6338,7 +6338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroud_DontTouch: {fileID: 1186078011}
   narration: "\uC0DD\uC77C \uCD95\uD558 \uC7A5\uC2DD\uC774 \uAC78\uB824\uC788\uB2E4."
-  isCharaterNarration: 1
+  isCharaterNarration: 0
   OnceNarrationTime: 0
 --- !u!1 &1386123617
 GameObject:
