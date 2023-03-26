@@ -79,9 +79,8 @@ public class AdMobManager : MonoBehaviour
     public void HandleRewardedAdClosed(object sender, EventArgs args)
     {
         Debug.Log("HandleRewardedAdClosed");
-        this.onHandleRewardedAdClosed();
-
         SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        this.onHandleRewardedAdClosed();
     }
 
     public void HandleUserEarnedReward(object sender, Reward args)
