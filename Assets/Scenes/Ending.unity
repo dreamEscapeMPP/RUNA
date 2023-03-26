@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 215433370}
   - component: {fileID: 215433369}
   - component: {fileID: 215433371}
+  - component: {fileID: 215433372}
   m_Layer: 0
   m_Name: story
   m_TagString: Untagged
@@ -480,6 +481,18 @@ MonoBehaviour:
   fadeImage: {fileID: 13076849}
   Next_Scene_Name: Main
   Clear_background_change: {fileID: 0}
+--- !u!114 &215433372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215433368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1510b37e66c3d74db24bd32319b8503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &607571597
 GameObject:
   m_ObjectHideFlags: 0
