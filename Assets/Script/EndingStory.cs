@@ -29,6 +29,11 @@ public class EndingStory : MonoBehaviour
         yield return StartCoroutine(Narration.instance.EndingChat("잊어버려서 미안해....", 2));
         Narration.instance.All_Off();
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+
+
+        // SceneManager.LoadScene("Main", LoadSceneMode.Single);
+
+        //광고호출
+        gameObject.GetComponent<AdmobScreenAd>().ShowAd();
     }
 }
