@@ -32,8 +32,10 @@ public class EndingStory : MonoBehaviour
 
 
         // SceneManager.LoadScene("Main", LoadSceneMode.Single);
-
+        AdMobManager.instance.Init();
+        AdMobManager.instance.ShowAds();
+        //SceneManager.LoadScene("Main", LoadSceneMode.Single);
         //±§∞Ì»£√‚
-        gameObject.GetComponent<AdmobScreenAd>().ShowAd();
+        //   gameObject.GetComponent<AdmobScreenAd>().ShowAd();
     }
 }

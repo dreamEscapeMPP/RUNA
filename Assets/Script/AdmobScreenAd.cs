@@ -20,8 +20,8 @@ public class AdmobScreenAd : MonoBehaviour
         });
 
 #if UNITY_ANDROID
-        adUnitId = "ca-app-pub-3940256099942544/1033173712";
-        //adUnitId = "ca-app-pub-4727835752295775/5917816098";
+        //adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        adUnitId = "ca-app-pub-4727835752295775/5917816098";
 #elif UNITY_IOS
             adUnitId = "unexpected_platform";
 #else
