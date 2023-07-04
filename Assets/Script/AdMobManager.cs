@@ -29,10 +29,10 @@ public class AdMobManager : MonoBehaviour
 #if UNITY_EDITOR
         string adUnitId = "unused";
 #elif UNITY_ANDROID
-        adUnitId = "ca-app-pub-4727835752295775/5917816098";
-        //adUnitId = "ca-app-pub-4727835752295775/5917816098";
+        adUnitId = "key"; // 보완상 삭제
+        //adUnitId = "key";
 #elif UNITY_IPHONE
-        string adUnitId = "ca-app-pub-4727835752295775/5917816098";
+        string adUnitId = "key";
 #else
         string adUnitId = "unexpected_platform";
 #endif
