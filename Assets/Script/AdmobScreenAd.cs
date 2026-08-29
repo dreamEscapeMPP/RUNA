@@ -20,8 +20,7 @@ public class AdmobScreenAd : MonoBehaviour
         });
 
 #if UNITY_ANDROID
-        //adUnitId = "key";
-        adUnitId = "key"; // 보완상 삭제
+        adUnitId = "ca-app-pub-4727835752295775/5917816098";
 #elif UNITY_IOS
             adUnitId = "unexpected_platform";
 #else

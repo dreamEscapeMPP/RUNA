@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,33 +42,60 @@ namespace Cam_Object
             GameObject.Find(Obj_name + "_Cam").GetComponent<Camera>().enabled = true;
         }
 
-        // 코루틴 이용해서 알파값 변경
-        ///페이드인아웃 하는 법
-        public IEnumerator FadeCorutine(Image Fade_Image)
+        // ---------------------------------------------------------------
+        // 페이드
+        // 예전 구현은 0.01초마다 알파를 점점 큰 폭으로 빼는 방식이라 프레임 속도에 따라
+        // 밝기가 툭툭 튀며 깜빡였다. 지금은 시간(Time.deltaTime) 기준으로 SmoothStep 보간한다.
+        // ---------------------------------------------------------------
+
+        public const float DefaultFadeDuration = 0.25f;
+
+        /// <summary>from → to 로 알파를 duration 초 동안 부드럽게 보간</summary>
+        public static IEnumerator FadeAlpha(Image Fade_Image, float from, float to, float duration)
         {
-            float fadeCount = 1.0f; //처음 알파값
-            int n = 1;
-            while (fadeCount > 0) //알파 최대값 1.0, 최소 0까지 반복
+            if (Fade_Image == null) yield break;
+            Color c = Fade_Image.color;
+            if (duration <= 0f)
             {
-                fadeCount -= (0.001f * n++);
-                yield return new WaitForSeconds(0.01f); //0.01초마다 실행
-                Fade_Image.color = new Color(0, 0, 0, fadeCount); //해당 변수값으로 알파 값 지정
+                Fade_Image.color = new Color(c.r, c.g, c.b, to);
+                yield break;
             }
+            float t = 0f;
+            Fade_Image.color = new Color(c.r, c.g, c.b, from);
+            while (t < duration)
+            {
+                t += Time.deltaTime;
+                float a = Mathf.Lerp(from, to, Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(t / duration)));
+                Fade_Image.color = new Color(c.r, c.g, c.b, a);
+                yield return null;
+            }
+            Fade_Image.color = new Color(c.r, c.g, c.b, to);
         }
 
+        /// <summary>
+        /// 카메라 전환용: 검게 덮은 뒤(onBlack 실행) 다시 밝힌다.
+        /// 카메라를 바꾸는 순간이 화면이 완전히 검을 때이므로 전환이 눈에 띄지 않는다.
+        /// </summary>
+        public static IEnumerator FadeTransition(Image Fade_Image, Action onBlack, float fadeOut = DefaultFadeDuration, float fadeIn = DefaultFadeDuration)
+        {
+            yield return FadeAlpha(Fade_Image, 0f, 1f, fadeOut);
+            if (onBlack != null) onBlack();
+            yield return FadeAlpha(Fade_Image, 1f, 0f, fadeIn);
+        }
+
+        // 검정(알파1) → 투명(알파0). 기존 호출부 호환용.
+        public IEnumerator FadeCorutine(Image Fade_Image)
+        {
+            yield return FadeAlpha(Fade_Image, 1f, 0f, DefaultFadeDuration);
+        }
+
+        // 투명(알파0) → 검정(알파1). 씬 전환 전에 사용. 기존 호출부 호환용.
         public IEnumerator FadeOutCorutine(Image Fade_Image)
         {
-            float fadeCount = 0.0f; //처음 알파값
-            int n = 1;
-            while (fadeCount < 1) //알파 최대값 1.0까지 반복
-            {
-                fadeCount += (0.001f * n++);
-                yield return new WaitForSeconds(0.01f); //0.01초마다 실행
-                Fade_Image.color = new Color(0, 0, 0, fadeCount); //해당 변수값으로 알파 값 지정
-            }
+            yield return FadeAlpha(Fade_Image, 0f, 1f, DefaultFadeDuration * 2f);
         }
     }
 }
 
 //사용시 자주 사용하면 using Cam_Object;
-//자주 아니면, Cam_Object.camera_obj cam = new Cam_Object.camera_obj(); 
+//자주 아니면, Cam_Object.camera_obj cam = new Cam_Object.camera_obj();

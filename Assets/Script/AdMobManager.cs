@@ -29,8 +29,7 @@ public class AdMobManager : MonoBehaviour
 #if UNITY_EDITOR
         string adUnitId = "unused";
 #elif UNITY_ANDROID
-        adUnitId = "key"; // 보완상 삭제
-        //adUnitId = "key";
+        adUnitId = "ca-app-pub-4727835752295775/5917816098";
 #elif UNITY_IPHONE
         string adUnitId = "key";
 #else
@@ -61,7 +60,7 @@ public class AdMobManager : MonoBehaviour
     public void HandleRewardedAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
         Debug.Log("HandleRewardedAdFailedToLoad");
-        this.onHandleRewardedAdFailedToLoad(args);
+        if (this.onHandleRewardedAdFailedToLoad != null) this.onHandleRewardedAdFailedToLoad(args);
 
     }
 
@@ -73,20 +72,32 @@ public class AdMobManager : MonoBehaviour
     public void HandleRewardedAdFailedToShow(object sender, EventArgs args)
     {
         Debug.Log("HandleRewardedAdFailedToShow");
-        this.onHandleRewardedAdFailedToShow();
+        if (this.onHandleRewardedAdFailedToShow != null) this.onHandleRewardedAdFailedToShow();
+    }
+
+    // 광고 콜백은 Android 에서 백그라운드 스레드로 들어오므로 씬 전환은 Update(메인 스레드)에서 한다.
+    private volatile bool loadMainRequested = false;
+
+    private void Update()
+    {
+        if (loadMainRequested)
+        {
+            loadMainRequested = false;
+            SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        }
     }
 
     public void HandleRewardedAdClosed(object sender, EventArgs args)
     {
         Debug.Log("HandleRewardedAdClosed");
-        SceneManager.LoadScene("Main", LoadSceneMode.Single);
-        this.onHandleRewardedAdClosed();
+        if (this.onHandleRewardedAdClosed != null) this.onHandleRewardedAdClosed();
+        else loadMainRequested = true; // 별도 처리기가 없으면 기본 동작: 메인으로
     }
 
     public void HandleUserEarnedReward(object sender, Reward args)
     {
         Debug.Log("HandleUserEarnedReward");
-        this.onHandleUserEarnedReward(args);
+        if (this.onHandleUserEarnedReward != null) this.onHandleUserEarnedReward(args);
 
     }
 
@@ -97,22 +108,34 @@ public class AdMobManager : MonoBehaviour
 
     public void ShowAds()
     {
-        StartCoroutine(this.ShowAdsRoutine());
+        ShowAds(-1f, null);
     }
 
-    private IEnumerator ShowAdsRoutine()
+    /// <summary>
+    /// 광고가 로드되면 표시한다. timeout(초) 안에 로드되지 않으면 onTimeout 을 호출한다 (timeout <= 0 이면 무제한 대기).
+    /// </summary>
+    public void ShowAds(float timeout, Action onTimeout)
     {
+        StartCoroutine(this.ShowAdsRoutine(timeout, onTimeout));
+    }
+
+    private IEnumerator ShowAdsRoutine(float timeout, Action onTimeout)
+    {
+        float waited = 0f;
         while (true)
         {
-            bool check = IsLoaded();
-            if (check == true)
+            if (this.rewardedAd != null && IsLoaded())
             {
                 this.rewardedAd.Show();
-                break;
+                yield break;
             }
-            else
+
+            waited += Time.deltaTime;
+            if (timeout > 0f && waited >= timeout)
             {
-                Debug.Log("reward ad not loaded.");
+                Debug.Log("reward ad not loaded within " + timeout + "s, skipping.");
+                if (onTimeout != null) onTimeout();
+                yield break;
             }
 
             yield return null;
