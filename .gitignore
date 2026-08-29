@@ -58,3 +58,18 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+# 서명 키스토어와 비밀번호 (절대 커밋 금지)
+*.keystore
+*.jks
+Assets/Editor/LocalKeystorePassword.cs
+Assets/Editor/LocalKeystorePassword.cs.meta
+
+# Unity 6 생성 파일
+.utmp/
+*.slnx
+
+# 개인 에디터 설정 / 빌드 부산물
+UserSettings/
+.vscode/
+*_BurstDebugInformation_DoNotShip/
