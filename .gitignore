@@ -73,3 +73,7 @@ Assets/Editor/LocalKeystorePassword.cs.meta
 UserSettings/
 .vscode/
 *_BurstDebugInformation_DoNotShip/
+
+# Unity gradle 템플릿 자동 변환 백업
+*.gradle.backup
+*.gradle.backup.meta
