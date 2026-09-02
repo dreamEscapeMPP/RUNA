@@ -24,7 +24,34 @@ public class EndingStory : MonoBehaviour
         // 엔딩에 도달한 순간 클리어로 저장 → 홈 버튼/광고/타임아웃 어떤 경로로 메인에 가도 처음부터 시작
         PlayerPrefs.SetInt("saveStage", 0);
         PlayerPrefs.Save();
+
+        // 광고는 대사가 나가는 동안 미리 로드해 둔다. (SDK 초기화+로드에 수 초가 걸리므로
+        // 대사가 끝난 뒤에 시작하면 adTimeout 안에 준비되지 못해 광고가 뜨지 않는다)
+        adsInitOk = InitAds();
+
         StartCoroutine(Play());
+    }
+
+    bool adsInitOk = false;
+
+    bool InitAds()
+    {
+        AdMobManager ads = AdMobManager.instance;
+        if (ads == null) return false;
+
+        ads.onHandleRewardedAdFailedToLoad = _ => GoMain();
+        ads.onHandleRewardedAdFailedToShow = GoMain;
+        ads.onHandleRewardedAdClosed = GoMain;
+        try
+        {
+            ads.Init();
+            return true;
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning("[EndingStory] AdMob Init 실패: " + e.Message);
+            return false;
+        }
     }
 
     void Update()
@@ -50,37 +77,14 @@ public class EndingStory : MonoBehaviour
         // 대사가 끝나면 홈 버튼을 보여준다. 광고가 안 떠도 사용자가 직접 메인으로 갈 수 있다.
         ShowHomeButton();
 
-        // 광고 호출. 광고가 닫히면 Main 으로 이동한다.
-        // 광고 로드/표시에 실패하거나 adTimeout 안에 뜨지 않으면 광고 없이 Main 으로 이동한다.
-        AdMobManager ads = AdMobManager.instance;
-        if (ads == null)
+        // 광고 표시. 대사 동안 미리 로드해 뒀으므로 보통 즉시 뜬다.
+        // 로드/표시 실패나 adTimeout 초과 시 광고 없이 Main 으로 이동한다.
+        if (!adsInitOk)
         {
             GoMain();
             yield break;
         }
-
-        ads.onHandleRewardedAdFailedToLoad = _ => GoMain();
-        ads.onHandleRewardedAdFailedToShow = GoMain;
-        ads.onHandleRewardedAdClosed = GoMain;
-
-        bool initOk = true;
-        try
-        {
-            ads.Init();
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogWarning("[EndingStory] AdMob Init 실패: " + e.Message);
-            initOk = false;
-        }
-
-        if (!initOk)
-        {
-            GoMain();
-            yield break;
-        }
-
-        ads.ShowAds(adTimeout, GoMain);
+        AdMobManager.instance.ShowAds(adTimeout, GoMain);
     }
 
     // 어느 스레드에서 불려도 안전. 실제 씬 전환은 Update 에서 한다.

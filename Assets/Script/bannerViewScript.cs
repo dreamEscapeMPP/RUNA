@@ -9,7 +9,7 @@ public class bannerViewScript : MonoBehaviour
     string adUnitId;
     private BannerView bannerView;
     
-    public void Start() //±¤°í ÃÊ±âÈ­
+    public void Start() //ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
     {
 #if UNITY_ANDROID
         adUnitId = "ca-app-pub-4727835752295775~4001216343";
@@ -20,7 +20,6 @@ public class bannerViewScript : MonoBehaviour
 #endif
 
         bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
-        AdRequest request = new AdRequest.Builder().Build();
-        bannerView.LoadAd(request);
+        bannerView.LoadAd(new AdRequest());
     }
 }

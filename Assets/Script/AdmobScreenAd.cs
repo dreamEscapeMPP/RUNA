@@ -40,9 +40,7 @@ public class AdmobScreenAd : MonoBehaviour
 
         Debug.Log("Loading the interstitial ad.");
 
-        var adRequest = new AdRequest.Builder()
-                .AddKeyword("unity-admob-sample")
-                .Build();
+        var adRequest = new AdRequest();
 
         InterstitialAd.Load(adUnitId, adRequest,
             (InterstitialAd ad, LoadAdError error) =>
@@ -114,7 +112,7 @@ public class AdmobScreenAd : MonoBehaviour
 
     private void RegisterReloadHandler(InterstitialAd ad) //광고 재로드
     {
-        ad.OnAdFullScreenContentClosed += (null);
+        ad.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Interstitial Ad full screen content closed.");
 
